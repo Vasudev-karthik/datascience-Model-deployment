@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+<style>
+    .GFG {
+        background-color: white;
+        border: 2px solid black;
+        color: green;
+        padding: 5px 10px;
+        text-align: center;
+        display: inline-block;
+        font-size: 20px;
+        margin: 10px 30px;
+        cursor: pointer;
+    }
+</style>
+</head>
+ 
+<body>
+ <div class="login container">
+  
+  <br>
+  <br>
+  <form action="{{ url_for('prediction')}}" method="post">
+    <button type="submit" class="btn btn-primary  btn-large">Prediction</button>
+  </form>
+    
+  <br>
+  <br>
+
+  <div class="row">
+
+    <div class="col-6">
+
+      <form action="{{ url_for('result')}}" method="post">
+        <button type="submit" class="btn btn-primary  btn-large">Decision Results</button>
+      </form>
+
+      <br>
+      <br>
+
+      <form action="{{ url_for('train')}}" method="post">
+         <button type="submit" class="btn btn-primary  btn-large">Train Model</button> 
+        <!--<input action="{{ url_for('train')}}" method="post" type="button" id='script' name="submit" value="Run Script"> -->
+        <!-- <input class="btn btn-primary  btn-large" type="button" id="script" name="scriptbutton" value="TrainModel" onclick="exec('python hello.py');"> -->
+      </form>
+
+      <br>
+      <br>
+
+      <form action="{{ url_for('decparameters')}}" method="post">
+         <button type="submit" class="btn btn-primary  btn-large">Decision Tree Parameters</button>
+      </form>
+
+
+    </div>
+  </div>
+ 
+</body>
+</html>
